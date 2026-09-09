@@ -3,34 +3,32 @@ Cyber Security Internship | Global Institute of Science &amp; Technology | Sep'2
 
 ## Tasks Selected
 
-### Task 1 - Basic: Cybersecurity Awareness & Security Audit
+- Task 1 - Basic: Cybersecurity Awareness & Security Audit
+- Task 2 - Intermediate: Password Security System
+- Task 3 - Advanced+: Security Monitoring & Incident Response
 
-Perform a basic security assessment of a sample website or local system. Identify common security risks such as weak passwords, insecure configurations, exposed information, and poor security practices. Prepare a short security report.
+# Cybersecurity Internship — Task Summary
 
-### Task 2 - Intermediate: Password Security System
+## Task 1: Security Audit Report
+Conducted a basic security audit of a local system using PowerShell. 
 
-Build a secure password-management demonstration that includes password strength checking, hashing, salting, validation, and secure authentication practices. Document the security principles used.
+The audit examined four key areas: 
+- system update status
+- password hygiene
+- open network ports
+- firewall and accounts
 
-### Task 3 - Advanced+: Security Monitoring & Incident Response
+The goal was to identify realistic, common weaknesses and propose practical fixes to reduce the overall attack surface.
 
-Create a small security-monitoring system that analyzes simulated logs, detects suspicious activities, generates alerts, and produces an incident report. Include recommendations for preventing similar incidents.
+## Task 2: Secure Password Management Demo
 
-## Task 1 - Basic: Cybersecurity Awareness & Security Audit
+Developed a command-line Python application to demonstrate secure password management practices from scratch. 
 
-## Scope
-- Target: My personal laptop
-- Date of audit: 08/09/2026
-- Tools used: Windows PowerShell
+- enforces password strength rules (minimum length, mix of uppercase, lowercase, numbers, and special characters)
+- instead of storing raw passwords, it generates a unique random salt per user using Python's `secrets` module
+- hashes the salted password with SHA-256
+- login input is hidden from the screen using `getpass`
+- authentication works by re-hashing the entered password with the stored salt and comparing it to the saved hash 
 
-## Findings
-
-| # | Area Checked | Finding | Risk Level |
-|---|---------------|---------|------------|
-| 1 | System Updates | Last update was 9 days ago | Medium |
-| 2 | Password Hygiene | Password Criteria Met | High |
-| 3 | Open Ports | Port 445 was open | Medium - if using a public network |
-| 4 | Windows Firewall | Firewall was enabled for Private and Public profiles (Domain: [check]) | Medium |
-| 5 | Accounts | Guest account was correctly disabled. However, 4 enabled local accounts were found. | Medium |
-
-## Conclusion
-This audit identified 3 issues of varying severity. Applying the recommendations would meaningfully reduce the attack surface of the tested system.
+## Task 3: Simulated Security Monitoring & Incident Report
+Simulated a basic security monitoring workflow by writing a Python script (using `re`, `collections`, and `datetime`) to analyze sample system logs and flag suspicious behavior. The script detected two notable incidents: a likely brute-force attack, where an admin account had multiple failed login attempts in quick succession followed by a successful login from the same IP; and a possible account compromise, where a user's credentials were used to access a sensitive payroll file from two different IP addresses, including one at an unusual hour. Each incident was documented with its risk level and recommended response — such as enforcing account lockout policies, enabling multi-factor authentication, and setting up real-time alerts for failed logins and anomalous file access patterns.
