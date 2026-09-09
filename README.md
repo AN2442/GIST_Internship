@@ -31,4 +31,11 @@ Developed a command-line Python application to demonstrate secure password manag
 - authentication works by re-hashing the entered password with the stored salt and comparing it to the saved hash 
 
 ## Task 3: Simulated Security Monitoring & Incident Report
-Simulated a basic security monitoring workflow by writing a Python script (using `re`, `collections`, and `datetime`) to analyze sample system logs and flag suspicious behavior. The script detected two notable incidents: a likely brute-force attack, where an admin account had multiple failed login attempts in quick succession followed by a successful login from the same IP; and a possible account compromise, where a user's credentials were used to access a sensitive payroll file from two different IP addresses, including one at an unusual hour. Each incident was documented with its risk level and recommended response — such as enforcing account lockout policies, enabling multi-factor authentication, and setting up real-time alerts for failed logins and anomalous file access patterns.
+Simulated a basic security monitoring workflow by writing a Python script (using `re`, `collections`, and `datetime`) to analyze sample system logs and flag suspicious behavior. 
+
+The script detected two notable incidents: 
+
+- a likely brute-force attack, where an admin account had multiple failed login attempts in quick succession and a successful login from the same IP
+- a possible account compromise, where a user's credentials were used to access a sensitive payroll file from two different IP addresses, including one at an unusual hour.
+
+Each incident was documented with its risk level and recommended response.
